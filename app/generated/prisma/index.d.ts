@@ -4711,8 +4711,8 @@ export namespace Prisma {
     createdAt?: boolean
     userId?: boolean
     raceId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     race?: boolean | RaceDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["fantasyPick"]>
 
   export type FantasyPickSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4721,8 +4721,8 @@ export namespace Prisma {
     createdAt?: boolean
     userId?: boolean
     raceId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     race?: boolean | RaceDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["fantasyPick"]>
 
   export type FantasyPickSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4731,8 +4731,8 @@ export namespace Prisma {
     createdAt?: boolean
     userId?: boolean
     raceId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     race?: boolean | RaceDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["fantasyPick"]>
 
   export type FantasyPickSelectScalar = {
@@ -4745,23 +4745,23 @@ export namespace Prisma {
 
   export type FantasyPickOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "pick" | "createdAt" | "userId" | "raceId", ExtArgs["result"]["fantasyPick"]>
   export type FantasyPickInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     race?: boolean | RaceDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type FantasyPickIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     race?: boolean | RaceDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type FantasyPickIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     race?: boolean | RaceDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $FantasyPickPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "FantasyPick"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
       race: Prisma.$RacePayload<ExtArgs>
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -5163,8 +5163,8 @@ export namespace Prisma {
    */
   export interface Prisma__FantasyPickClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     race<T extends RaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RaceDefaultArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5924,8 +5924,8 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"FantasyPick"> | Date | string
     userId?: IntFilter<"FantasyPick"> | number
     raceId?: IntFilter<"FantasyPick"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type FantasyPickOrderByWithRelationInput = {
@@ -5934,8 +5934,8 @@ export namespace Prisma {
     createdAt?: SortOrder
     userId?: SortOrder
     raceId?: SortOrder
-    user?: UserOrderByWithRelationInput
     race?: RaceOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type FantasyPickWhereUniqueInput = Prisma.AtLeast<{
@@ -5947,8 +5947,8 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"FantasyPick"> | Date | string
     userId?: IntFilter<"FantasyPick"> | number
     raceId?: IntFilter<"FantasyPick"> | number
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
   export type FantasyPickOrderByWithAggregationInput = {
@@ -6127,8 +6127,8 @@ export namespace Prisma {
   export type FantasyPickCreateInput = {
     pick: string
     createdAt?: Date | string
-    user: UserCreateNestedOneWithoutPicksInput
     race: RaceCreateNestedOneWithoutFantasyPickInput
+    user: UserCreateNestedOneWithoutPicksInput
   }
 
   export type FantasyPickUncheckedCreateInput = {
@@ -6142,8 +6142,8 @@ export namespace Prisma {
   export type FantasyPickUpdateInput = {
     pick?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutPicksNestedInput
     race?: RaceUpdateOneRequiredWithoutFantasyPickNestedInput
+    user?: UserUpdateOneRequiredWithoutPicksNestedInput
   }
 
   export type FantasyPickUncheckedUpdateInput = {
@@ -6613,24 +6613,16 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPostsInput, UserUpdateWithoutPostsInput>, UserUncheckedUpdateWithoutPostsInput>
   }
 
-  export type UserCreateNestedOneWithoutPicksInput = {
-    create?: XOR<UserCreateWithoutPicksInput, UserUncheckedCreateWithoutPicksInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPicksInput
-    connect?: UserWhereUniqueInput
-  }
-
   export type RaceCreateNestedOneWithoutFantasyPickInput = {
     create?: XOR<RaceCreateWithoutFantasyPickInput, RaceUncheckedCreateWithoutFantasyPickInput>
     connectOrCreate?: RaceCreateOrConnectWithoutFantasyPickInput
     connect?: RaceWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutPicksNestedInput = {
+  export type UserCreateNestedOneWithoutPicksInput = {
     create?: XOR<UserCreateWithoutPicksInput, UserUncheckedCreateWithoutPicksInput>
     connectOrCreate?: UserCreateOrConnectWithoutPicksInput
-    upsert?: UserUpsertWithoutPicksInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPicksInput, UserUpdateWithoutPicksInput>, UserUncheckedUpdateWithoutPicksInput>
   }
 
   export type RaceUpdateOneRequiredWithoutFantasyPickNestedInput = {
@@ -6639,6 +6631,14 @@ export namespace Prisma {
     upsert?: RaceUpsertWithoutFantasyPickInput
     connect?: RaceWhereUniqueInput
     update?: XOR<XOR<RaceUpdateToOneWithWhereWithoutFantasyPickInput, RaceUpdateWithoutFantasyPickInput>, RaceUncheckedUpdateWithoutFantasyPickInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutPicksNestedInput = {
+    create?: XOR<UserCreateWithoutPicksInput, UserUncheckedCreateWithoutPicksInput>
+    connectOrCreate?: UserCreateOrConnectWithoutPicksInput
+    upsert?: UserUpsertWithoutPicksInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPicksInput, UserUpdateWithoutPicksInput>, UserUncheckedUpdateWithoutPicksInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -6955,24 +6955,6 @@ export namespace Prisma {
     picks?: FantasyPickUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserCreateWithoutPicksInput = {
-    name: string
-    email: string
-    posts?: DiscussionPostCreateNestedManyWithoutAuthorInput
-  }
-
-  export type UserUncheckedCreateWithoutPicksInput = {
-    id?: number
-    name: string
-    email: string
-    posts?: DiscussionPostUncheckedCreateNestedManyWithoutAuthorInput
-  }
-
-  export type UserCreateOrConnectWithoutPicksInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutPicksInput, UserUncheckedCreateWithoutPicksInput>
-  }
-
   export type RaceCreateWithoutFantasyPickInput = {
     title: string
     date: Date | string
@@ -6993,28 +6975,22 @@ export namespace Prisma {
     create: XOR<RaceCreateWithoutFantasyPickInput, RaceUncheckedCreateWithoutFantasyPickInput>
   }
 
-  export type UserUpsertWithoutPicksInput = {
-    update: XOR<UserUpdateWithoutPicksInput, UserUncheckedUpdateWithoutPicksInput>
+  export type UserCreateWithoutPicksInput = {
+    name: string
+    email: string
+    posts?: DiscussionPostCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserUncheckedCreateWithoutPicksInput = {
+    id?: number
+    name: string
+    email: string
+    posts?: DiscussionPostUncheckedCreateNestedManyWithoutAuthorInput
+  }
+
+  export type UserCreateOrConnectWithoutPicksInput = {
+    where: UserWhereUniqueInput
     create: XOR<UserCreateWithoutPicksInput, UserUncheckedCreateWithoutPicksInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutPicksInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutPicksInput, UserUncheckedUpdateWithoutPicksInput>
-  }
-
-  export type UserUpdateWithoutPicksInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    posts?: DiscussionPostUpdateManyWithoutAuthorNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutPicksInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    posts?: DiscussionPostUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type RaceUpsertWithoutFantasyPickInput = {
@@ -7041,6 +7017,30 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     videoUrl?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type UserUpsertWithoutPicksInput = {
+    update: XOR<UserUpdateWithoutPicksInput, UserUncheckedUpdateWithoutPicksInput>
+    create: XOR<UserCreateWithoutPicksInput, UserUncheckedCreateWithoutPicksInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutPicksInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutPicksInput, UserUncheckedUpdateWithoutPicksInput>
+  }
+
+  export type UserUpdateWithoutPicksInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    posts?: DiscussionPostUpdateManyWithoutAuthorNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutPicksInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    posts?: DiscussionPostUncheckedUpdateManyWithoutAuthorNestedInput
   }
 
   export type DiscussionPostCreateManyAuthorInput = {
